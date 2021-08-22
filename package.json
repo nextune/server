@@ -4,8 +4,9 @@
   "description": "backend server and aggregator for the nextune client",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "build": "babel src -d dist --copy-files",
+    "start": "node ./dist/server.js",
+    "dev": "npm run build && nodemon ./dist/server.js"
   },
   "repository": {
     "type": "git",
@@ -18,12 +19,21 @@
   },
   "homepage": "https://github.com/nextune/server#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mongoose": "^5.13.7",
-    "morgan": "^1.10.0"
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.6.5"
   },
   "devDependencies": {
-    "nodemon": "^2.0.12"
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "nodemon": "^2.0.12",
+    "sequelize-cli": "^6.2.0"
   }
 }
