@@ -1,7 +1,0 @@
-*.DS_Store
-nodemon.json
-node_modules
-src
-jsconfig.json
-.babelrc.js
-.gitignore
