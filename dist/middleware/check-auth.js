@@ -1,1 +1,0 @@
-"use strict";var jwt=require("jsonwebtoken");module.exports=function(a,b,c){try{var d=a.headers.authentication,e=jwt.verify(d,process.env.jwt_key);a.userData=e,c()}catch(a){return b.status(401).json({error:"Authorisation Failed :("})}};
