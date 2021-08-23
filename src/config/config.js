@@ -3,7 +3,10 @@ let conn;
 if (process.env.DATABASE_URL) {
   conn = {
     "use_env_variable": "DATABASE_URL",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": true
+    }
   }
 } else {
   require('dotenv').config(); //do this here as its only a dev dependency
