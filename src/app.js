@@ -4,17 +4,12 @@ const cors = require('cors');
 
 const app = express();
 
-//db test
-const db = require('database');
-db.authenticate()
-    .then(() => console.log('YAY'))
-    .catch(err => console.log('Error ' + err));
-
 //routers
 const trackRoutes = require('routes/tracks');
 
 //logging
 app.use(morgan('dev'));
+
 //parsing
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
