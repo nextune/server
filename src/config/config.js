@@ -5,8 +5,10 @@ if (process.env.DATABASE_URL) {
     "use_env_variable": "DATABASE_URL",
     "dialect": "postgres",
     "dialectOptions": {
-      "ssl": true,
-      "rejectUnauthorized": false
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
     }
   }
 } else {
