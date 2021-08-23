@@ -4,7 +4,7 @@
   "description": "backend server and aggregator for the nextune client",
   "main": "index.js",
   "scripts": {
-    "build": "babel src -d dist --copy-files --delete-dir-on-start && cd dist && sequelize db:migrate --env development",
+    "prestart": "babel src -d dist --copy-files --delete-dir-on-start && cd dist && sequelize db:migrate --env development",
     "start": "cd dist && node ./server.js",
     "dev": "npm run build && cd dist && nodemon ./server.js"
   },
