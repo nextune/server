@@ -1,19 +1,13 @@
-require('dotenv').config();
-const parse = require('pg-connection-string').parse;
-
-let config;
 let conn;
 
 if (process.env.DATABASE_URL) {
-  config = parse(process.env.DATABASE_URL);
   conn = {
-    "username": config.user,
-    "password": config.password,
-    "database": config.database,
-    "host": config.host,
+    "use_env_variable": process.env.DATABASE_URL,
     "dialect": "postgres"
   }
 } else {
+  require('dotenv').config(); //do this here as its only a dev dependency
+
   conn = {
     "username": process.env.DB_USER,
     "password": process.env.DB_PWD,
