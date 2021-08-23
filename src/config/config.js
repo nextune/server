@@ -2,7 +2,7 @@ let conn;
 
 if (process.env.DATABASE_URL) {
   conn = {
-    "use_env_variable": process.env.DATABASE_URL,
+    "use_env_variable": "DATABASE_URL",
     "dialect": "postgres"
   }
 } else {
