@@ -1,20 +1,15 @@
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
-const mongoose = require('mongoose');
 
 const app = express();
 
-mongoose.connect(process.env.mongo_atlas, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
-
 //routers
-const trackRoutes = require('./api/routes/tracks');
+const trackRoutes = require('routes/tracks');
 
 //logging
 app.use(morgan('dev'));
+
 //parsing
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());

@@ -1,0 +1,1 @@
+"use strict";var http=require("http"),app=require("./app"),port=process.env.PORT||process.env.FALLBACK_PORT,server=http.createServer(app);server.listen(port),console.log("Server listening on port",port);
