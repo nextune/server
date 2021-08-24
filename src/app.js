@@ -4,6 +4,9 @@ const cors = require('cors');
 
 const app = express();
 
+//i wanna celebrate
+console.log('YAY');
+
 //routers
 const trackRoutes = require('routes/tracks');
 
@@ -36,7 +39,5 @@ app.use((error, req, res, next) => {
         }
     })
 });
-
-console.log(process.cwd());
 
 module.exports = app;
