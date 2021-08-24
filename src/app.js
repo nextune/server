@@ -37,4 +37,6 @@ app.use((error, req, res, next) => {
     })
 });
 
+console.log(process.cwd());
+
 module.exports = app;
